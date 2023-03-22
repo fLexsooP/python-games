@@ -42,8 +42,8 @@ ball.shape("circle")
 ball.color("white")
 ball.penup()
 ball.goto(0, 0)
-ball.dx = 0.08
-ball.dy = 0.08
+ball.dx = 1
+ball.dy = 1
 
 # Pen
 pen = turtle.Turtle()
@@ -125,7 +125,9 @@ while True:
     if (ball.xcor() > 340 and ball.xcor() < 350) and (ball.ycor() < paddle_b.ycor() + 45) and (ball.ycor() > paddle_b.ycor() - 45):
         ball.setx(340)
         ball.dx *= -1
+        os.system("afplay bounce.wav&")
         
     if (ball.xcor() < -340 and ball.xcor() > -350) and (ball.ycor() < paddle_a.ycor() + 45) and (ball.ycor() > paddle_a.ycor() - 45):
         ball.setx(-340)
         ball.dx *= -1
+        os.system("afplay bounce.wav&")
